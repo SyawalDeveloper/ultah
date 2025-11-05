@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For you my ... 🎉</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #6fc3ff, #0095ff);
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 40px 0;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            /* overflow-y: auto; */
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 20px;
+            padding: 30px;
+            width: 90%;
+            max-width: 350px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cake {
+            font-size: 70px;
+            margin-bottom: 10px;
+            animation: float 2.5s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        h1 {
+            color: #ff4081;
+            margin-bottom: 10px;
+            font-size: 1.8rem;
+        }
+
+        p {
+            color: #444;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #ff4081;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #e91e63;
+        }
+
+        .balloon {
+            position: absolute;
+            bottom: -100px;
+            font-size: 40px;
+            animation: rise 6s linear infinite;
+            opacity: 0.8;
+        }
+
+        @keyframes rise {
+            from {
+                transform: translateY(0);
+            }
+
+            to {
+                transform: translateY(-110vh);
+            }
+        }
+
+        @media (max-width: 500px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .cake {
+                font-size: 55px;
+            }
+
+            p {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="cake">🎂</div>
+        <h1>Selamat Ulang Tahun!</h1>
+        <p>
+            Hari ini adalah hari istimewamu — waktu di mana dunia seakan lebih hangat karena kehadiranmu.
+            Semoga setiap langkahmu dipenuhi cahaya, setiap harapan tumbuh menjadi nyata,
+            dan setiap senyumanmu menjadi alasan seseorang untuk tetap berjuang.
+
+            <br><br>
+            <i>
+                Dalam hembusan angin kutitipkan doa,
+                semoga bahagiamu tak pernah bertepi.
+                Umur boleh bertambah,
+                tapi hatimu tetap lembut, setegar mentari pagi.
+            </i>
+        </p>
+
+        <button class="btn" onclick="showSurprise()">Lihat Kejutan 🎁</button>
+    </div>
+
+    <script>
+        function createBalloon() {
+            const balloon = document.createElement('div');
+            balloon.classList.add('balloon');
+            balloon.textContent = '🎈';
+            balloon.style.left = Math.random() * 100 + 'vw';
+            balloon.style.animationDuration = 4 + Math.random() * 4 + 's';
+            document.body.appendChild(balloon);
+
+            setTimeout(() => {
+                balloon.remove();
+            }, 6000);
+        }
+
+        function showSurprise() {
+            alert("🎉 Tetap semangat, tetap kompak, jaga kesehatan. Sa mau kalau kita tetap saling ada & saling melengkapi satu sama lain. Maaf kalau selama ini saya ada salah. Bahagia selalu. Amin yang paling tulus. 'Bumi, 06 November 2025'");
+            setInterval(createBalloon, 300);
+        }
+    </script>
+
+</body>
+
+</html>
